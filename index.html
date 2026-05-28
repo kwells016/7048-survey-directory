@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7048 Survey Directory</title>
+    <title>7048 Survey Directory - Clock Check</title>
     <style>
         * {
             margin: 0;
@@ -90,6 +90,35 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
+        .hidden {
+            display: none;
+        }
+
+        .message {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #2a2a2a;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn-group .btn {
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .warning-message {
+            font-size: 18px;
+            color: #ea1100;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
         /* Mobile responsiveness */
         @media (max-width: 600px) {
             .container {
@@ -104,19 +133,58 @@
                 padding: 14px 20px;
                 font-size: 15px;
             }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-group .btn {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>7048 Survey Directory</h1>
-        <p class="subtitle">Access all your forms here</p>
+        <!-- Landing Page: Clock Status Check -->
+        <div id="landingPage">
+            <h1>Welcome</h1>
+            <p class="message">Are you currently on the clock?</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="proceedToSurvey()">Yes</button>
+                <button class="btn btn-secondary" onclick="showNotClockedIn()">No</button>
+            </div>
+        </div>
 
-        <div class="form-buttons">
-            <a href="https://airtable.com/appHdJSeNijf4l484/pagOtiErMspngniLR/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                Voice of the Associate
-            </a>
+        <!-- Survey Directory Page -->
+        <div id="surveyPage" class="hidden">
+            <h1>7048 Survey Directory</h1>
+            <p class="subtitle">Access all your forms here</p>
+
+            <div class="form-buttons">
+                <a href="https://airtable.com/appHdJSeNijf4l484/pagOtiErMspngniLR/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    Voice of the Associate
+                </a>
+            </div>
+        </div>
+
+        <!-- Not Clocked In Message -->
+        <div id="notClockedInPage" class="hidden">
+            <h1>See You Later!</h1>
+            <p class="warning-message">Please come back when you are clocked in for the day!</p>
         </div>
     </div>
+
+    <script>
+        function proceedToSurvey() {
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('surveyPage').classList.remove('hidden');
+        }
+
+        function showNotClockedIn() {
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('notClockedInPage').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
