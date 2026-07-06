@@ -119,6 +119,14 @@
             margin-top: 20px;
         }
 
+        .spanish {
+            display: block;
+            font-size: 12px;
+            color: #999999;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
         /* Mobile responsiveness */
         @media (max-width: 600px) {
             .container {
@@ -148,36 +156,36 @@
     <div class="container">
         <!-- Landing Page: Clock Status Check -->
         <div id="landingPage">
-            <h1>Welcome</h1>
-            <p class="message">Are you currently on the clock?</p>
+            <h1>Welcome<p class="spanish">Bienvenido/a</p></h1>
+            <p class="message">Are you currently on the clock?<br><span class="spanish">¿Estás actualmente trabajando?</span></p>
             <div class="btn-group">
-                <button class="btn btn-primary" onclick="proceedToSurvey()">Yes</button>
-                <button class="btn btn-secondary" onclick="showNotClockedIn()">No</button>
+                <button class="btn btn-primary" onclick="proceedToSurvey()">Yes<div class="spanish">Sí</div></button>
+                <button class="btn btn-secondary" onclick="showNotClockedIn()">No<div class="spanish">No</div></button>
             </div>
         </div>
 
         <!-- Survey Directory Page -->
         <div id="surveyPage" class="hidden">
-            <h1>7048 Survey Directory</h1>
-            <p class="subtitle">Access all your forms here</p>
+            <h1>7048 Survey Directory<p class="spanish">Directorio de Encuestas 7048</p></h1>
+            <p class="subtitle">Access all your forms here<br><span class="spanish">Accede a todos tus formularios aquí</span></p>
 
             <div class="form-buttons">
                 <a href="https://airtable.com/appHdJSeNijf4l484/pagOtiErMspngniLR/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    Voice of the Associate
+                    Voice of the Associate<div class="spanish">La Voz del Asociado</div>
                 </a>
                 <a href="https://airtable.com/app1eIFBNjwjSfFBU/paglTLJp61QVUkfo3/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    Profile and Rack Label Request
+                    Profile and Rack Label Request<div class="spanish">Solicitud de Perfil y Etiqueta de Rack</div>
                 </a>
                 <a href="https://airtable.com/appxGYKGmm6FOrMgC/pagYsEdFVHMgCpG8W/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    Transfer Interest
+                    Transfer Interest<div class="spanish">Interés de Transferencia</div>
                 </a>
             </div>
         </div>
 
         <!-- Not Clocked In Message -->
         <div id="notClockedInPage" class="hidden">
-            <h1>See You Later!</h1>
-            <p class="warning-message">Please come back when you are clocked in for the day!</p>
+            <h1>See You Later!<p class="spanish">¡Hasta Luego!</p></h1>
+            <p class="warning-message">Please come back when you are clocked in for the day!<div class="spanish">¡Por favor, regresa cuando estés marcado/a para el día!</div></p>
         </div>
     </div>
 
